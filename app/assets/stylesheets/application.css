@@ -13,3 +13,38 @@
  *= require_tree .
  *= require_self
  */
+
+/* Styles for main page */
+#banner {
+  background: #2c3e50;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid;
+  font: small-caps 40px/40px "Times New Roman", serif;
+  color: #ecf0f1;
+  text-align: center;
+}
+#banner img {
+  float: left;
+}
+#columns {
+  background: #bdc3c7;
+}
+#main {
+  margin-left: 13em;
+  padding-top: 4ex;
+  padding-left: 2em;
+  background: white;
+}
+#side {
+  float: left;
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-bottom: 1em;
+  width: 12em;
+  background: #bdc3c7;
+}
+#side a {
+  color: #2c3e50;
+  font-size: small;
+}
