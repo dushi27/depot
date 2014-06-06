@@ -5,6 +5,7 @@ class OrdersController < ApplicationController
   # GET /orders.json
   def index
     @orders = Order.all
+    @orders = Order.paginate page: params[:page], order: 'created_at desc' ,per_page: 10
   end
 
   # GET /orders/1
