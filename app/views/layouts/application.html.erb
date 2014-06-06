@@ -18,9 +18,9 @@
       <a href="http://www.google.com">Questions</a><br />
       <a href="http://www.google.com">News</a><br />
       <a href="http://www.google.com">Contact</a><br><br>
-     
+     <%= button_to 'Checkout', new_order_path, method: :get %>
       <div id="cart">
-        <%=render @cart%>
+        <%=render @cart%>       
       </div><br>
     </div>
   <div id="main">

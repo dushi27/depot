@@ -3,8 +3,8 @@
 one:
   name: MyString
   address: MyText
-  email: MyString
-  pay_type: MyString
+  email: MyString@yahoo.com
+  pay_type: Check
 
 two:
   name: MyString

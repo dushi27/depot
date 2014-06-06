@@ -23,11 +23,11 @@
     <%= f.label :email %><br>
     <%= f.text_field :email %>
   </div>
-  <div class="field">
-    <%= f.label :pay_type %><br>
-    <%= f.text_field :pay_type %>
+  <div class = "field">
+  <%= f.label :pay_type, "Pay with" %>
+  <%= f.select :pay_type,  Order::PAYMENT_TYPES,  prompt: "Select a payment method"%>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Place Order' %>
   </div>
 <% end %>
