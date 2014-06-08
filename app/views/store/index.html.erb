@@ -2,16 +2,16 @@
 <p id="notice"><%= notice %></p>
 <% end %>
 
-<h1>Your Pragmatic Catalog</h1>
+<h1><%= t(".title_html") %></h1>
 
 <% @products.each do |product| %>
   <div class="entry">
-    <%= image_tag(product.image_url, height: '70', width: '70') %>
+    <%= image_tag(product.image_url, width: 70, higth: 70)%>
     <h3><%= product.title %></h3>
-    <%=sanitize product.description %>
+    <%=raw product.description %>
     <div class="price_line">
-      <span class="price"><%= number_to_currency(product.price) %></span>
-      <%= button_to 'Add to Cart', line_items_path(product_id: product), remote: true %>
+      <b><span class="price"><%= number_to_currency(product.price) %></span></b>
+      <%= button_to 'Add to Cart', line_items_path(:product_id => product) %>
     </div>
   </div>
 <% end %>

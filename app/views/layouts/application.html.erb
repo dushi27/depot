@@ -8,39 +8,38 @@
 </head>
 
 <body id="store">
-  <%= form_tag store_path, :class => 'locale' do %>
-    <%= select_tag 'set_locale',
-      options_for_select(LANGUAGES, I18n.locale.to_s), onchange: 'this.form.submit()' %>
-    <%= submit_tag 'submit' %>
-    <%= javascript_tag "$$('.locale input').each(Element.hide)" %>
-<% end %>
   <div id="banner">
-    <%= image_tag("logo.png", width: 50, higth: 50 ) %>
-    <%= @page_title || "Pragmatic Bookshelf" %>
+    <%= form_tag store_path, class: 'locale' do %>
+      <%= select_tag 'set_locale', options_for_select(LANGUAGES, I18n.locale.to_s), onchange:'this.form.submit()' %>
+      <%= submit_tag 'submit' %>
+      <%= javascript_tag "$$('.locale input').each(Element.hide)" %>
+    <%end%>  
+    
+    <%= 'Pragmatic Book Store' || t('.title') %>
   </div>
   <div id="columns">
-    <div id="side">     
-      <a href="store/index">Home</a><br />
-      <a href="http://www.google.com">Questions</a><br />
-      <a href="http://www.google.com">News</a><br />
-      <a href="http://www.google.com">Contact</a><br><br>
-     <%= button_to 'Checkout', new_order_path, method: :get %>
-      
+    <div id="side">
+      <% if @cart %>
+        <%= hidden_div_if(@cart.line_items.empty?, :id => "cart") do %>
+          <%= render @cart %>
+        <% end %>
+      <% end %>
+      <a href="/"><%= t('.home') %></a><br />     
+      <a href="http://www.github.com/dushi27"><%= t('.Github_Page') %></a><br />
+      <a href="https://twitter.com/Dushyanthi1"><%= t('.contact') %></a><br />
+
       <% if session[:user_id] %>
         <br />
-        <%= link_to 'Orders', orders_path %><br />
+        <%= link_to 'Orders',   orders_path   %><br />
         <%= link_to 'Products', products_path %><br />
-        <%= link_to 'Users', users_path %><br />
+        <%= link_to 'Users',    users_path    %><br />
         <br />
-        <%= button_to 'Logout', logout_path, :method => :delete %>
+        <%= button_to 'Logout', logout_path, method: :delete   %>
       <% end %>
-      <div id="cart">
-        <%=render @cart%>       
-      </div><br>
     </div>
-  <div id="main">
-    <%= yield %>
+    <div id="main">
+      <%= yield %>
+    </div>
   </div>
- </div>
 </body>
 </html>
