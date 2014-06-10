@@ -31,20 +31,18 @@ class LineItemsController < ApplicationController
   end
 
  def create
-     @cart = find_or_create_cart
-     product = Product.find(params[:product_id])
-     @line_item = @cart.line_items.build(:product => product)
+    @cart = current_cart
+    product = Product.find(params[:product_id])
+    @line_item = @cart.add_product(product.id) #adds  products with the same product_id and display as a total
 
      respond_to do |format|
        if @line_item.save
          format.html { redirect_to(store_url)  }
          format.js   { @current_item = @line_item }
-         format.xml  { render :xml => @line_item,
-           :status => :created, :location => @line_item }
+         format.xml  { render xml: @line_item, status: :created, location: @line_item }
        else
-         format.html { render :action => "new" }
-         format.xml  { render :xml => @line_item.errors,
-           :status => :unprocessable_entity }
+         format.html { render action: "new" }
+         format.xml  { render xml: @line_item.errors, status: :unprocessable_entity }
        end
      end
    end
@@ -75,12 +73,10 @@ class LineItemsController < ApplicationController
 
   
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_line_item
       @line_item = LineItem.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def line_item_params
       params.require(:line_item).permit(:product_id, :cart_id)
     end

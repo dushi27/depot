@@ -6,7 +6,7 @@ class StoreController < ApplicationController
       redirect_to store_path(locale: params[:set_locale])
     else
       @products = Product.all
-      @cart = find_or_create_cart
+      @cart = current_cart
     end
   end
 end
