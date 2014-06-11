@@ -33,7 +33,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
+    @user = User.create(user_params)
 
     respond_to do |format|
       if @user.save
@@ -84,6 +84,6 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:name, :hashed_password, :salt)
+      params.require(:user).permit(:name, :hashed_password)
     end
 end
