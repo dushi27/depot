@@ -26,8 +26,9 @@
       <% end %>
       <a href="/"><%= t('.home') %></a><br />     
       <a href="http://www.github.com/dushi27"><%= t('.Github_Page') %></a><br />
-      <a href="https://twitter.com/Dushyanthi1"><%= t('.contact') %></a><br />
+      <a href="https://twitter.com/Dushyanthi1"><%= t('.contact') %></a><br/><br/><br/>
 
+      
       <% if session[:user_id] %>
         <br />
         <%= link_to 'Orders',   orders_path   %><br />
@@ -35,6 +36,8 @@
         <%= link_to 'Users',    users_path    %><br />
         <br />
         <%= button_to 'Logout', logout_path, method: :delete   %>
+      <%else%>
+        <%= link_to 'Admin Login', login_path, method: :get%>
       <% end %>
     </div>
     <div id="main">

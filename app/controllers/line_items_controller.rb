@@ -48,7 +48,9 @@ class LineItemsController < ApplicationController
    end
 
   def update
-    @line_item = LineItem.find(params[:id])
+    @cart = current_cart
+    #@line_item = LineItem.find(params[:id])
+    @line_items = @cart.line_items
 
     respond_to do |format|
       if @line_item.update_attributes(params[:line_item])

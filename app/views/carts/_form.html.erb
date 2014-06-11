@@ -10,8 +10,18 @@
       </ul>
     </div>
   <% end %>
+  <div class="form-group">
+    <%= f.label :quantity %>
+    <%= f.file_field :quantity, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :product_id %>
+    <%= f.text_field :product_id, class: "form-control" %>
+  </div>
 
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>

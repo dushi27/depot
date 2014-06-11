@@ -34,7 +34,7 @@ class CartsController < ApplicationController
   end
 
   def edit
-    @cart = Cart.find(params[:id])
+    @cart = current_cart
   end
 
   def create
@@ -51,22 +51,22 @@ class CartsController < ApplicationController
     end
   end
 
-  def update
-    @cart = Cart.find(params[:id])
-
-    respond_to do |format|
-      if @cart.update_attributes(params[:cart])
-        format.html { redirect_to(@cart, notice: 'Cart was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render action: "edit" }
-        format.xml  { render xml: @cart.errors, status: :unprocessable_entity }
-      end
+ def update
+  @cart = Cart.find(:id)
+      
+   respond_to do |format|
+     if @cart.update_attributes(params[cart])
+       format.html { redirect_to(@cart, notice: 'Cart was successfully updated.') }
+       format.xml  { head :ok }
+     else
+       format.html { render action: "edit" }
+       format.xml  { render xml: @cart.errors, status: :unprocessable_entity }
+     end
     end
-  end
+ end
 
   def destroy
-    @cart = Cart.find(:id)
+    @cart = current_cart
     @cart.destroy
     session[:cart_id] = nil #remove the cart from the session 
 
@@ -76,11 +76,7 @@ class CartsController < ApplicationController
     end
   end
 
-  private
-    def cart_params
-      params.require(:cart).permit (:cart_id, :product_id)
-    end
-      
-  end
+
+
 
 end
