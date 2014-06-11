@@ -1,5 +1,5 @@
 class CartsController < ApplicationController                 
-  skip_before_filter :authorize, only: [:create, :update, :delete]
+  skip_before_filter :authorize, only: [:create, :update, :destroy]
 
   def index
     @carts = Cart.all
@@ -12,7 +12,7 @@ class CartsController < ApplicationController
 
   def show
     begin
-      @cart = Cart.find(params[:id])
+      @cart = Cart.find(params[:cart_id])
     rescue ActiveRecord::RecordNotFound
       logger.error "Attempt to access invalid cart #{params[:id]}"
       redirect_to store_url, notice: 'Invalid cart'
@@ -66,7 +66,7 @@ class CartsController < ApplicationController
   end
 
   def destroy
-    @cart = Cart.find(params[:id])
+    @cart = Cart.find(:id)
     @cart.destroy
     session[:cart_id] = nil #remove the cart from the session 
 
@@ -74,6 +74,13 @@ class CartsController < ApplicationController
       format.html { redirect_to(store_url, notice: 'Your cart is currently empty' ) }
       format.xml  { head :ok }
     end
+  end
+
+  private
+    def cart_params
+      params.require(:cart).permit (:cart_id, :product_id)
+    end
+      
   end
 
 end

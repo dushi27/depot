@@ -1,5 +1,5 @@
 class LineItemsController < ApplicationController
-  skip_before_filter :authorize, only: :create
+  skip_before_filter :authorize, only: [:create, :destroy]
 
   def index
     @line_items = LineItem.all    
