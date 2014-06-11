@@ -33,7 +33,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(params[:product])
+    @product = Product.create(product_params)
 
     respond_to do |format|
       if @product.save
