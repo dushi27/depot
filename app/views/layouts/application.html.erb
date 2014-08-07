@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang=en>
 <head>
 <title>Pragmatic Books Online Store</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-
 <body id="store">
-  <div id="banner">
-    <%= form_tag store_path, class: 'locale' do %>
+  <div id="banner">   
+     <%form_tag store_path, class: 'locale' do %>
       <%= select_tag 'set_locale', options_for_select(LANGUAGES, I18n.locale.to_s), onchange:'this.form.submit()' %>
       <%= submit_tag 'submit' %>
       <%= javascript_tag "$$('.locale input').each(Element.hide)" %>
-    <%end%>  
-    
+     <%end%>    
     <%= 'Pragmatic Book Store' || t('.title') %>
   </div>
   <div id="columns">
@@ -23,26 +24,32 @@
         <%= hidden_div_if(@cart.line_items.empty?, :id => "cart") do %>
           <%= render @cart %>
         <% end %>
+      <% end %><br>
+      <ul class="nav nav-pills nav-stacked">
+          <li><a href="/"><%= t('.home') %></a></li> 
+          <li><a href="https://github.com/dushi27/depot"><%= t('.Github_Page') %></a></li>
+          <li><a href="https://twitter.com/Dushyanthi1"><%= t('.contact') %></a></li><br/>
+        <% if session[:user_id] %>
+          <br />
+          <li><%= link_to 'Orders',   orders_path%></li>
+          <li><%= link_to 'Products', products_path %></li>
+          <li><%= link_to 'Users',    users_path    %></li> 
+          <li><%= button_to 'Logout', logout_path, method: :delete, class:"btn btn-warning"   %>
+        <%else%>
+          <li><%= button_to 'Admin Login', login_path, method: :get, class:"btn btn-success"%><br>      
       <% end %>
-      <a href="/"><%= t('.home') %></a><br />     
-      <a href="https://github.com/dushi27/depot"><%= t('.Github_Page') %></a><br />
-      <a href="https://twitter.com/Dushyanthi1"><%= t('.contact') %></a><br/><br/><br/>
+     </ul>
+    <div class="socialIcons">
+      <a href="https://github.com/dushi27/depot"><img src="assets/github.png"/></a>
+      <a href="https://twitter.com/dushyanthi1"><img src="assets/twitter.png"/></a>
+      <a href="http://dushyanthipierismspc.blogspot.com/"><img src="assets/blogger.png"/></a>
+      <a href="https://www.linkedin.com/in/dushyanthipieris"><img src="assets/linkedin.png"/></a>
+    </div>
+    </div>
 
-      
-      <% if session[:user_id] %>
-        <br />
-        <%= link_to 'Orders',   orders_path   %><br />
-        <%= link_to 'Products', products_path %><br />
-        <%= link_to 'Users',    users_path    %><br />
-        <br />
-        <%= button_to 'Logout', logout_path, method: :delete   %>
-      <%else%>
-        <%= link_to 'Admin Login', login_path, method: :get%><br>      
-      <% end %>
-    </div>
-    <div id="main">
-      <%= yield %>
-    </div>
-  </div>
+      <div id="main">     
+        <%= yield %>
+      </div>
+  </div><!--end of column id-->
 </body>
 </html>

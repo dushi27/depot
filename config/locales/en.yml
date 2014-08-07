@@ -55,8 +55,8 @@ en:
   carts:
     cart:
       title:       "Your Cart"
-      empty:       "Empty Cart"
-      checkout:    "Checkout"
+    #  empty:       "Empty Cart"
+     # checkout:    "Checkout"
 #END:cart
 
 #START:main

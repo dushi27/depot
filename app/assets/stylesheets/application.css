@@ -24,6 +24,13 @@
   color: #ecf0f1;
   text-align: center;
 }
+.socialIcons img{
+  height:30px;
+  width:30px;
+}
+.socialIcons img nth-child(3){
+  border-radius:10px;
+}
 #banner img {
   float: left;
 }
@@ -31,7 +38,7 @@
   background: #bdc3c7;
 }
 #main {
-  margin-left: 13em;
+  margin-left: 18em;
   padding-top: 4ex;
   padding-left: 2em;
   background: white;
@@ -41,10 +48,36 @@
   padding-top: 1em;
   padding-left: 1em;
   padding-bottom: 1em;
-  width: 12em;
+  width: 18em;
+  padding-right: 20px;
   background: #bdc3c7;
 }
 #side a {
   color: #2c3e50;
   font-size: small;
+}
+
+.nav-stacked{
+  
+}
+
+/*catalog*/
+.panel-info h3{
+  text-align: center;
+}
+
+.panel-info img{
+  float:left;
+  padding-left: 20px;
+  width: 100px;
+  height: 100px;
+}
+
+.panel-info p{
+  float:right;
+}
+
+.panel-info .btn{
+  float:left;
+  clear:both;
 }

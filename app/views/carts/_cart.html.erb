@@ -1,4 +1,3 @@
-<div class="cart_title"><%= t('.title') %></div>
 <table>
   <%= render cart.line_items %>
   <tr class="total_line">
@@ -6,6 +5,7 @@
     <td class="total_cell"><%= number_to_currency cart.total_price %></td>
   </tr>
 </table>
-
-<%= button_to t('.checkout'), new_order_url, method: :get %>
-<%= button_to t('.empty'), @cart, method: :delete, data: { confirm: 'Are you sure?'} %>
+<div class="btn-group">
+  <%= button_to "Checkout", new_order_url, method: :get, class:"btn btn-sm btn-default" %> 
+  <%= button_to "Empty Cart", @cart, method: :delete, data: { confirm: 'Are you sure?'}, class:"btn btn-sm btn-default" %>
+</div>
