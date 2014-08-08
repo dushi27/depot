@@ -14,7 +14,7 @@
  *= require_self
  */
 
-/* Styles for main page */
+/* Layout styles for main page */
 #banner {
   background: #2c3e50;
   padding-top: 10px;
@@ -23,14 +23,9 @@
   font: small-caps 40px/40px "Times New Roman", serif;
   color: #ecf0f1;
   text-align: center;
+  box-shadow: inset -2px -3px 3px 0px rgba(50, 50, 50, 0.75);
 }
-.socialIcons img{
-  height:30px;
-  width:30px;
-}
-.socialIcons img nth-child(3){
-  border-radius:10px;
-}
+
 #banner img {
   float: left;
 }
@@ -57,13 +52,22 @@
   font-size: small;
 }
 
-.nav-stacked{
-  
+.nav-stacked li{
+  border: 2px solid #ecf0f1;
+  font-weight:bold;
+  font-size: 15px;
+  text-align:center;
+  border-radius:15px;
 }
 
 /*catalog*/
+.panel-info{
+  background-color:#F0FFFF;
+  border-radius:15px;
+}
 .panel-info h3{
-  text-align: center;
+  text-align: center; 
+  font-weight:bold;
 }
 
 .panel-info img{
@@ -80,4 +84,53 @@
 .panel-info .btn{
   float:left;
   clear:both;
+}
+
+.soc {
+    overflow:hidden;
+    margin-left:10px; 
+    padding:0;
+    list-style:none;
+}
+
+.soc li {
+    display:inline-block;
+    *display:inline;
+    zoom:1;
+}
+
+
+.soc li a {
+    -o-transition:.1s;
+    -ms-transition:.1s;
+    -moz-transition:.1s;
+    -webkit-transition:.1s;
+    transition:.1s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+
+    
+    display:block;
+    position: relative;
+    z-index: 1;
+    width: 34px;
+    height: 38px;
+    line-height: 38px;
+    -webkit-border-radius: 17px;
+    -moz-border-radius: 17px;
+    border-radius: 17px;
+    margin-right: 10px;
+
+}
+
+.soc a:hover {
+    z-index: 2;
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+}
+
+.soc-icon-last{
+    margin:0 !important;
 }

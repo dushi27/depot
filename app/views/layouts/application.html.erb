@@ -17,6 +17,12 @@
       <%= javascript_tag "$$('.locale input').each(Element.hide)" %>
      <%end%>    
     <%= 'Pragmatic Book Store' || t('.title') %>
+         <ul class="soc">
+       <li><a href="https://github.com/dushi27/depot" target="_blank"><img src="http://icons.iconarchive.com/icons/lunartemplates/modern-social-media-rounded/64/GitHub-icon.png"></a></li>
+       <li><a href="https://twitter.com/Dushyanthi1" target="_blank"><img src="http://icons.iconarchive.com/icons/lunartemplates/modern-social-media-rounded/64/Twitter-icon.png"/></a></li>
+       <li><a href="http://dushyanthipierismspc.blogspot.com" target="_blank"><img src="http://icons.iconarchive.com/icons/lunartemplates/modern-social-media-rounded/64/Blogger-icon.png"/></a></li>
+       <li><a href="https://www.linkedin.com/in/dushyanthipieris" target="_blank"><img src="http://icons.iconarchive.com/icons/lunartemplates/modern-social-media-rounded/64/LinkedIn-icon.png"/></a></li>
+     </ul>
   </div>
   <div id="columns">
     <div id="side">
@@ -27,26 +33,20 @@
       <% end %><br>
       <ul class="nav nav-pills nav-stacked">
           <li><a href="/"><%= t('.home') %></a></li> 
-          <li><a href="https://github.com/dushi27/depot"><%= t('.Github_Page') %></a></li>
-          <li><a href="https://twitter.com/Dushyanthi1"><%= t('.contact') %></a></li><br/>
         <% if session[:user_id] %>
           <br />
           <li><%= link_to 'Orders',   orders_path%></li>
           <li><%= link_to 'Products', products_path %></li>
           <li><%= link_to 'Users',    users_path    %></li> 
-          <li><%= button_to 'Logout', logout_path, method: :delete, class:"btn btn-warning"   %>
+          <br><%= button_to 'Logout', logout_path, method: :delete, class:"btn btn-warning"   %>
         <%else%>
-          <li><%= button_to 'Admin Login', login_path, method: :get, class:"btn btn-success"%><br>      
+          <br><%= button_to 'Admin Login', login_path, method: :get, class:"btn btn-success"%><br>    
       <% end %>
      </ul>
-    <div class="socialIcons">
-      <a href="https://github.com/dushi27/depot"><img src="assets/github.png"/></a>
-      <a href="https://twitter.com/dushyanthi1"><img src="assets/twitter.png"/></a>
-      <a href="http://dushyanthipierismspc.blogspot.com/"><img src="assets/blogger.png"/></a>
-      <a href="https://www.linkedin.com/in/dushyanthipieris"><img src="assets/linkedin.png"/></a>
-    </div>
-    </div>
 
+    </div>
+    <img src="">
+    
       <div id="main">     
         <%= yield %>
       </div>
