@@ -37,20 +37,19 @@ class ProductsController < ApplicationController
         render :action => "edit"
        # format.xml  { render :xml => @product.errors, :status => :unprocessable_entity }
       end
-
   end
 
  def destroy
     @product = Product.find(params[:id])
     @product.destroy
     redirect_to(products_url) 
-  end
+ end
   
   def who_bought
     @product = Product.find(params[:id])   
       format.atom
      # format.xml { render xml: @product }
-    end
+    
   end
 
   private
