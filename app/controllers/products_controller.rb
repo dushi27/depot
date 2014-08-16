@@ -18,16 +18,13 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.create(product_params)
-
-   
+    @product = Product.create(product_params)   
       if @product.save
         redirect_to(@product, :notice => 'Product was successfully created.')        
       else
         render :action => "new"
       #  format.xml  { render :xml => @product.errors, :status => :unprocessable_entity }
       end
-    end
   end
 
   def update
