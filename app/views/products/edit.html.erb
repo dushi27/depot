@@ -1,11 +1,12 @@
-<h1>Editing product</h1>
+<h1>Edit Product</h1>
 
-<div class= "depot_form">
+<div class= "depot_form"> 
   <fieldset>
-    <legend><%= 'Please enter your details' %></legend>
+    <legend><%= 'Please enter your details' %></legend>   
       <%= render 'form' %>
   </fieldset>
 </div>
+<br>
 
 <%= link_to 'Show', @product, class:'btn btn-default'  %> |
 <%= link_to 'Delete', @product,  method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-default' %> |

@@ -138,3 +138,12 @@
 .pull-right{
   margin-right:7%;
 }
+
+.depot_form{
+  margin-right:2%;
+}
+
+.depot_form div {
+  margin: 0.5em 0;
+  margin-right:3%;
+}
