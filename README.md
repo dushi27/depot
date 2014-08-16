@@ -2,7 +2,7 @@
 
 Depot is a business to consumer e-commerce application built based on Agile Web Development (4th edition). The application is live on <a href="http://dp-pragmatic.herokuapp.com/">dp-pragmatic.herokuapp.com</a>. Please clone the repository</a> to see the admin view of the application. 
 
-##Create a LocalCcopy of the Repo
+##Create a Local Copy of the Repo
 
 Step 1: Click the 'Fork' button on the top right on your screen. That will create a copy of the repo under your Github username.
 
