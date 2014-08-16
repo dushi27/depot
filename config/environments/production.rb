@@ -87,7 +87,7 @@ Rails.application.configure do
     port: 25, # ports 587 and 2525 are also supported with STARTTLS
     enable_starttls_auto: true,
     user_name: ENV["MANDRILL_USERNAME"],
-    password: ENV["MANDRILL_PASSWORD",
+    password: ENV["MANDRILL_PASSWORD"],
     domain:'bookz.herokuapp.com' # your domain to identify your server when connecting
     }
 end
