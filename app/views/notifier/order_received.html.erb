@@ -1,9 +1,7 @@
 <p>
-  <%= @greeting %>, 
+Hello <%=@order.name%>, 
   
-Thank you for your recent order from The Book-Z online bookstore.
-You ordered the following items:
-  <%= render @order.line_items %>
- 
+Thank you for your recent order from The Book-Z online bookstore. Your order will be shipped to <%=@order.address%>.
+
 We'll send you a separate e-mail when your order ships.
 </p>

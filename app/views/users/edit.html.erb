@@ -1,6 +1,13 @@
-<h1>Editing user</h1>
+<h1>Edit Admin User</h1>
 
-<%= render 'form' %>
+<div class= "depot_form">
+  <fieldset>
+    <legend><%='Please enter your details'%></legend>
+      <%= render 'form' %>
+  </fieldset>
+</div>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<br>
+<%= link_to 'Show', @user, class:'btn btn-default' %> |
+<%= link_to 'Delete', @user, :confirm => 'Are you sure?', method: :delete , class:'btn btn-default' %> |
+<%= link_to 'Back', users_path, class:'btn btn-default'  %>

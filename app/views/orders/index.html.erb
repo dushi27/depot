@@ -1,6 +1,8 @@
-<h1>Listing orders</h1>
+<%= link_to 'New Order', new_order_path , class:'btn btn-lg btn-info pull-right'%>
+<div id="product_list">
+  <h1>Current Orders</h1><br>
 
-<table>
+<table class='table'>
   <thead>
     <tr>
       <th>Name</th>
@@ -13,21 +15,20 @@
 
   <tbody>
     <% @orders.each do |order| %>
-      <tr>
+      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
         <td><%= order.name %></td>
         <td><%= order.address %></td>
         <td><%= order.email %></td>
         <td><%= order.pay_type %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
+        <td><%= link_to 'Actions', edit_order_path(order) %></td>
+        
       </tr>
     <% end %>    
   </tbody>
 </table>
-
+</div>
 <br>
 <%= will_paginate @orders %><br>
 
-<%= link_to 'New Order', new_order_path %>
 

@@ -1,6 +1,12 @@
 <h1>Editing order</h1>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @order %> |
-<%= link_to 'Back', orders_path %>
+<div class= "depot_form">
+  <fieldset>
+    <legend><%= 'Please enter your details' %></legend>
+      <%= render 'form' %>
+  </fieldset>
+</div>
+<br>
+<%= link_to 'Show', @order , class:'btn btn-default' %> |
+<%= link_to 'Delete', @order, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-default'  %> |
+<%= link_to 'Back', orders_path, class:'btn btn-default'  %>
