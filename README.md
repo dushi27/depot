@@ -13,13 +13,13 @@ The following documentation describes how to;
 
 The products is a a RESFTful JSON API that allow admin users to access a list of products currently in the catalog. To access products API;
 
-Step 1: Go to <a href="http://bookz.herokuapp.com/api/products.json">bookz.herokuapp.com/api/products.json</a>
+Step 1: Go to <a href="http://bookz.herokuapp.com/api/v1/products.json">bookz.herokuapp.com/api/v1/products.json</a>
 
 Step 2: If you are not already longged in as an admin user, it will promt a login. Please ender the username "john" and password "john2014" OR if you have created a new Admin user, enter the appropriate cridentials. Note that only an Admin user can create another admin user. 
 
 Step 3: It'll render a list of products currently saved on the catalog
 
-Step 4: To access a single product, add the product id to the URL. Example, <a href="http://bookz.herokuapp.com/api/products/1.json">bookz.herokuapp.com/api/products/1.json</a>. Above will render the first product in the catalog. 
+Step 4: To access a single product, add the product id to the URL. Example, <a href="http://bookz.herokuapp.com/api/v1/products/1.json">bookz.herokuapp.com/api/v1/products/1.json</a>. Above will render the first product in the catalog. 
 
 
 
