@@ -13,14 +13,14 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <title>Depot by dushi27</title>
+    <title>Book-Z by dushi27</title>
   </head>
 
   <body>
     <header>
       <div class="inner">
-        <h1>Depot</h1>
-        <h2>B to C E-com app maintained by D Pieris</h2>
+        <h1>Book-Z</h1>
+        <h2>Business to Consumer E-com app maintained by D Pieris</h2>
         <a href="https://github.com/dushi27/depot" class="button"><small>View project on</small>GitHub</a>
       </div>
     </header>
@@ -31,7 +31,7 @@
           <h2>
 <a name="e-commerce-web-app" class="anchor" href="#e-commerce-web-app"><span class="octicon octicon-link"></span></a>E-commerce Web App</h2>
 
-<p>Depot is a business to consumer e-commerce application built based on Agile Web Development (4th edition). Currently the application is live on <a href="http://bookz.herokuapp.com/">bookz.herokuapp.com</a>. Please feel free to explor the website. Note that Admin username: john and password: john2014.</p>
+<p>Book-Z is a business to consumer e-commerce Ruby on Rails application built based on Agile Web Development (4th edition). Currently the application is live on <a href="http://bookz.herokuapp.com/">bookz.herokuapp.com</a> using Heroku cloud server. Please feel free to explore the consumer interface and the admin interface of the application (admin username: john and password: john2014). The application also utilize Mendrill email API, Google Analytics for user behavior analytics. If you have any questions, concerns or issues please feel free to contact me via <a href="https://twitter.com/Dushyanthi1">@Dushyanthi1</a> twitter handle.</p>
 
 <p>The following documentation describes how to;</p>
 
@@ -45,18 +45,31 @@
 
 <p>Step 1: Go to <a href="http://bookz.herokuapp.com/api/v1/products.json">bookz.herokuapp.com/api/v1/products.json</a></p>
 
-<p>Step 2: If you are not already longged in as an admin user, it will promt a login. Please ender the username "john" and password "john2014" OR if you have created a new Admin user, enter the appropriate cridentials. Note that only an Admin user can create another admin user. </p>
+<p>Step 2: If you are not already signed in as an admin user, it will alert a login. Please ender the username "john" and password "john2014" OR if you have created a new Admin user, enter the appropriate credentials. Note that only an Admin user can create another admin user. </p>
 
 <p>Step 3: It'll render a list of products currently saved on the catalog</p>
 
 <p>Step 4: To access a single product, add the product id to the URL. Example, <a href="http://bookz.herokuapp.com/api/v1/products/1.json">bookz.herokuapp.com/api/v1/products/1.json</a>. Above will render the first product in the catalog. </p>
 
 <h2>
+<a name="curl-examples" class="anchor" href="#curl-examples"><span class="octicon octicon-link"></span></a>Curl Examples</h2>
+
+<ol>
+<li>To get the products catalog</li>
+</ol><div class="highlight highlight-bash"><pre>curl -u john:john2014 http://bookz.herokuapp.com/api/v1/products.json
+</pre></div>
+
+<ol>
+<li>Get each product by product ID</li>
+</ol><div class="highlight highlight-bash"><pre>curl -u john:john2014 http://bookz.herokuapp.com/api/v1/products/1.json
+</pre></div>
+
+<h2>
 <a name="create-a-local-copy-of-the-repo" class="anchor" href="#create-a-local-copy-of-the-repo"><span class="octicon octicon-link"></span></a>Create a Local Copy of the Repo</h2>
 
 <p>Step 1: Click the 'Fork' button on the top right on your screen. That will create a copy of the repo under your Github username.</p>
 
-<p>Step 2: In your commandline/ terminal run</p>
+<p>Step 2: In your command line/ terminal run</p>
 
 <div class="highlight highlight-bash"><pre><span class="nv">$ </span>git clone GIT CLONE URL 
 </pre></div>
@@ -69,7 +82,7 @@ to install the necessary gems </p>
 <div class="highlight highlight-bash"><pre><span class="nv">$ </span>bundle install 
 </pre></div>
 
-<p>to migrate the database (This reporitory use Rails 4.1.1 if you are using older version migrate the test environment): </p>
+<p>to migrate the database (This repository use Rails 4.1.1 if you are using older version migrate the test environment): </p>
 
 <div class="highlight highlight-bash"><pre><span class="nv">$ </span>rake db:migrate
 </pre></div>
@@ -84,7 +97,6 @@ to install the necessary gems </p>
 <p>to run project in a  locally</p>
 
 <div class="highlight highlight-bash"><pre><span class="nv">$ </span>rails s 
-
 </pre></div>
         </section>
 
