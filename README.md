@@ -1,6 +1,6 @@
 ##E-commerce Web App
 
-Depot is a business to consumer e-commerce application built based on Agile Web Development (4th edition). Currently the application is live on <a href="http://bookz.herokuapp.com/">bookz.herokuapp.com</a>. Please feel free to explor the website. Note that Admin username: john and password: john2014.
+Depot is a business to consumer e-commerce Ruby on Rails application built based on Agile Web Development (4th edition). Currently the application is live on <a href="http://bookz.herokuapp.com/">bookz.herokuapp.com</a> using Heroku cloud server. Please feel free to explor the consumer interface and the admin interface of the application (admin username: john and password: john2014). The application also utiliese Mendrill email API, Google Analytics for Analytics. 
 
 The following documentation describes how to;
 
@@ -21,7 +21,19 @@ Step 3: It'll render a list of products currently saved on the catalog
 
 Step 4: To access a single product, add the product id to the URL. Example, <a href="http://bookz.herokuapp.com/api/v1/products/1.json">bookz.herokuapp.com/api/v1/products/1.json</a>. Above will render the first product in the catalog. 
 
+##Curl Examples
 
+1. To get a procuts catalog
+
+```bash
+curl -u john:john2014 http://bookz.herokuapp.com/api/v1/products.json
+```bash
+
+2. Get each product by product ID
+
+```bash
+curl -u john:john2014 http://bookz.herokuapp.com/api/v1/products/1.json
+```bash
 
 ##Create a Local Copy of the Repo
 
