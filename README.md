@@ -27,13 +27,13 @@ Step 4: To access a single product, add the product id to the URL. Example, <a h
 
 ```bash
 curl -u john:john2014 http://bookz.herokuapp.com/api/v1/products.json
-```bash
+```
 
 2. Get each product by product ID
 
 ```bash
 curl -u john:john2014 http://bookz.herokuapp.com/api/v1/products/1.json
-```bash
+```
 
 ##Create a Local Copy of the Repo
 
