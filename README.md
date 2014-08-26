@@ -1,6 +1,6 @@
 ##E-commerce Web App
 
-Depot is a business to consumer e-commerce Ruby on Rails application built based on Agile Web Development (4th edition). Currently the application is live on <a href="http://bookz.herokuapp.com/">bookz.herokuapp.com</a> using Heroku cloud server. Please feel free to explor the consumer interface and the admin interface of the application (admin username: john and password: john2014). The application also utiliese Mendrill email API, Google Analytics for Analytics. 
+Book-Z is a business to consumer e-commerce Ruby on Rails application built based on Agile Web Development (4th edition). Currently the application is live on <a href="http://bookz.herokuapp.com/">bookz.herokuapp.com</a> using Heroku cloud server. Please feel free to explore the consumer interface and the admin interface of the application (admin username: john and password: john2014). The application also utilize Mendrill email API, Google Analytics for user behavior analytics. If you have any questions, concerns or issues please feel free to contact me via <a href="https://twitter.com/Dushyanthi1">@Dushyanthi1</a> twitter handle.
 
 The following documentation describes how to;
 
@@ -15,7 +15,7 @@ The products is a a RESFTful JSON API that allow admin users to access a list of
 
 Step 1: Go to <a href="http://bookz.herokuapp.com/api/v1/products.json">bookz.herokuapp.com/api/v1/products.json</a>
 
-Step 2: If you are not already longged in as an admin user, it will promt a login. Please ender the username "john" and password "john2014" OR if you have created a new Admin user, enter the appropriate cridentials. Note that only an Admin user can create another admin user. 
+Step 2: If you are not already signed in as an admin user, it will alert a login. Please ender the username "john" and password "john2014" OR if you have created a new Admin user, enter the appropriate credentials. Note that only an Admin user can create another admin user. 
 
 Step 3: It'll render a list of products currently saved on the catalog
 
@@ -23,7 +23,7 @@ Step 4: To access a single product, add the product id to the URL. Example, <a h
 
 ##Curl Examples
 
-1. To get a procuts catalog
+1. To get the products catalog
 
 ```bash
 curl -u john:john2014 http://bookz.herokuapp.com/api/v1/products.json
@@ -39,7 +39,7 @@ curl -u john:john2014 http://bookz.herokuapp.com/api/v1/products/1.json
 
 Step 1: Click the 'Fork' button on the top right on your screen. That will create a copy of the repo under your Github username.
 
-Step 2: In your commandline/ terminal run
+Step 2: In your command line/ terminal run
 
 ```bash
 $ git clone GIT CLONE URL 
@@ -51,7 +51,7 @@ to install the necessary gems
 ```bash
 $ bundle install 
 ```
-to migrate the database (This reporitory use Rails 4.1.1 if you are using older version migrate the test environment): 
+to migrate the database (This repository use Rails 4.1.1 if you are using older version migrate the test environment): 
 ```bash
 $ rake db:migrate
 ```
@@ -65,4 +65,5 @@ Note:Seed will create an Admin user for the admin tools demo.
 to run project in a  locally
 ```bash
 $ rails s 
+```
  
