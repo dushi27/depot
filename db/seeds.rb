@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-User.create(name: 'john', password:'john2014', password_confirmation:'john2014')
+User.create(name: 'bookzrails', password:'bookzrails2014', password_confirmation:'bookzrails2014')
 Product.delete_all
 Product.create(title: 'Web Design for Developers',
   description:
