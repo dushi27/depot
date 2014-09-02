@@ -48,7 +48,7 @@ class LineItemsController < ApplicationController
     @line_item = LineItem.find(params[:id])
     @line_item.destroy
     redirect_to(line_items_url)
- end
+  end
 
   
   private

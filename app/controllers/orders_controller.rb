@@ -27,17 +27,15 @@ class OrdersController < ApplicationController
   def create
     @order = Order.create(order_params)
     @order.add_line_items_from_cart(current_cart)
-       
- 
+        
       if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
-        redirect_to(store_url, notice: 'Thank you for your order. Please check your email for order confirmation')
+        redirect_to store_url, notice: 'Thank you for your order. Please check your email for order confirmation'
         Notifier.order_received(@order).deliver
       else
         render action: "new"
       end
-
   end
 
   def update

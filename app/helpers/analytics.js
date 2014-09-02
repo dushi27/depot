@@ -1,11 +1,3 @@
-<!-- Step 1: Create the containing elements. -->
-
-<section id="auth-button"></section>
-<section id="view-selector"></section>
-<section id="timeline"></section>
-
-<!-- Step 2: Load the library. -->
-
 <script>
 (function(w,d,s,g,js,fjs){
   g=w.gapi||(w.gapi={});g.analytics={q:[],ready:function(cb){this.q.push(cb)}};
@@ -15,12 +7,13 @@
 }(window,document,'script'));
 </script>
 
-<script>
-gapi.analytics.ready(function() {
 
+<script>
   // Step 3: Authorize the user.
 
-  var CLIENT_ID = 'Insert your client ID here';
+  var CLIENT_ID = '71639948371-91k7bpgjc7mfp9hhbb6h51ppecfk0qou.apps.googleusercontent.com'
+gapi.analytics.ready(function() {
+;
 
   gapi.analytics.auth.authorize({
     container: 'auth-button',
