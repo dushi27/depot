@@ -1,13 +1,8 @@
-<div class="container">
-<h1>Welcome</h1>
-
-As of <%= Time.now %>We have <%= pluralize(@total_orders, "order" ) %>.
-
 <!-- Step 1: Create the containing elements. -->
 
-  <section id="auth-button"></section>
-  <section id="view-selector"></section>
-  <section id="timeline"></section>
+<section id="auth-button"></section>
+<section id="view-selector"></section>
+<section id="timeline"></section>
 
 <!-- Step 2: Load the library. -->
 
@@ -20,13 +15,12 @@ As of <%= Time.now %>We have <%= pluralize(@total_orders, "order" ) %>.
 }(window,document,'script'));
 </script>
 
-
 <script>
+gapi.analytics.ready(function() {
+
   // Step 3: Authorize the user.
 
-  var CLIENT_ID = '71639948371-91k7bpgjc7mfp9hhbb6h51ppecfk0qou.apps.googleusercontent.com'
-gapi.analytics.ready(function() {
-;
+  var CLIENT_ID = 'Insert your client ID here';
 
   gapi.analytics.auth.authorize({
     container: 'auth-button',

@@ -11,7 +11,7 @@ Depot::Application.routes.draw do
     post 'login' => :create
     delete 'logout' => :destroy
   end
-  
+   
   scope '(:locale)' do
     resources :users
     resources :orders
