@@ -1,5 +1,5 @@
 class Notifier < ActionMailer::Base
-  default from: "admin@bookz.com"
+  default from: "bookzrails@gmail.com"
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
