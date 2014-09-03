@@ -1,8 +1,9 @@
-Dear <%= @order.name %>
+Hello <%=@order.name%>, 
+  
+Thank you for your recent order from The Book-Z online bookstore. Follwoing items will be ship order will be shipped to <%=@order.address%>. 
 
-Thank you for your recent order from The Book-z Online Bookstore Store.
-You ordered will be shipped to:
-  <%=@order.address%>
- 
+  Order Details-
+  <%=@order.line_items%>
+
 Regards,
-  Book-z Online Store
+  Bookz Online Store
