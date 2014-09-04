@@ -1,15 +1,18 @@
 <p>
-Hello <%=@order.name%>, <br>
+Hello <%=@order.name%>, <br><br>
   
 Thank you for trying the order feature of the Book-Z, a demo online store application built using Ruby on Rails. You are reciving this message because you have test ordered following products;
-  <br>
+  <br><br>
   <%@order.line_items.each do |item|%>
-  <%=item.quantity%> x <%=Product.find(item.product_id).title%>
+  <%=item.quantity%> x <%=Product.find(item.product_id).title%><br>
   <%end%>
+<br>
 <br>
 Please feel free to try out Book-Z API and the Admin interfaces at <a href"bookz.herokuapp.com">bookz.herokuapp.com</a>
 <br>
+<br>
 Regards,
+  <br>
   <br>
   Dushyanthi Pieris
 </p>
