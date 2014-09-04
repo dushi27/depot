@@ -3,7 +3,7 @@ Hello <%=@order.name%>,<br><br>
 Thank you for trying the order feature of the Book-Z, a demo online store application built using Ruby on Rails. You are reciving this message because you have test ordered following products;
 <%=%>
   <%@order.line_items.each do |item|%>
-<%=item.quantity%> x <%=Product.find(item.product_id)%>
+<%=item.quantity%> x <%=Product.find(item.product_id).title%>
   <%end%>
 <%=%>
 Please feel free to try out Book-Z API and the Admin interfaces at bookz.herokuapp.com
