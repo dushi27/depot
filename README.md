@@ -1,8 +1,8 @@
 ##E-commerce Web App
 
-Book-Z is a business to consumer e-commerce Ruby on Rails application built based on Agile Web Development (4th edition). Currently the application is live on <a href="http://bookz.herokuapp.com/">bookz.herokuapp.com</a>. Please feel free to explore the consumer interface and the admin interface of the application (admin username: bookzrails and password: bookzrails2014). If you have any questions, concerns or issues please feel free to contact me via <a href="https://twitter.com/Dushyanthi1">@Dushyanthi1</a> twitter handle.
+Book-Z is a business to consumer e-commerce application built based on <a href="http://www.amazon.com/Agile-Development-Rails-Pragmatic-Programmers/dp/1934356549">Agile Web Development with Rails</a>. Currently the application is live on <a href="http://bookz.herokuapp.com/">bookz.herokuapp.com</a>. Please feel free to explore the consumer interface and the admin interface of the application (admin username: bookzrails and password: bookzrails2014). If you have any questions, concerns or issues please feel free to contact me via <a href="https://twitter.com/Dushyanthi1">@Dushyanthi1</a> twitter handle.
 
-The following documentation describes how to;
+The following documentation describes;
 
 1. About and Technical Specs
 
@@ -16,10 +16,9 @@ The following documentation describes how to;
 Book-z is built using Ruby on Rails version 4.1.1 and Ruby 2.1.1. It is currently in production using Postgresql database on Heroku cloud scalable server. It also integrate Mendrill email infrastructure and Google Analytics for application usage statistics.    
 
 
-
 ##Using the Products API
 
-The products is a a RESFTful JSON API that allow admin users to access a list of products currently in the catalog. To access products API;
+Book-Z also offers an autheticated RESTful JSON API of its products catalog. The access is limited to the Admin users of the application. To use the products API;
 
 Step 1: Go to <a href="http://bookz.herokuapp.com/api/v1/products.json">bookz.herokuapp.com/api/v1/products.json</a>
 
