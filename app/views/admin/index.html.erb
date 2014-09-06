@@ -1,14 +1,17 @@
-<div class="container">
-<h1>Welcome</h1>
+<div class="container stats">
 
-As of <%= Time.now %>We have <%= pluralize(@total_orders, "order" ) %>.
+<div class="product_statis">
+  <h1>Product Statistics</h1>
+  As of <%= Time.now %>We have <%= pluralize(@total_orders, "order" ) %>.
+</div>
 
 <!-- Step 1: Create the containing elements. -->
-
+<div class="web_stats">
+  <h1>Web Statistics</h1>
   <section id="auth-button"></section>
   <section id="view-selector"></section>
   <section id="timeline"></section>
-
+</div>
 <!-- Step 2: Load the library. -->
   
 <script>

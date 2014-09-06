@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  #before_filter :validation, only:[:create, :update]
+  #before_filter :check_input, only:[:create, :update]
   
   def index
     @users = User.order(:name)
@@ -86,7 +86,6 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:name, :password, :password_confrimation)
-    end
-
-           
+    end   
+             
 end
