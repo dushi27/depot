@@ -67,3 +67,27 @@ div {
     list-style: square;
   }
 }
+
+/*admin page statistics*/
+.stats{
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  overflow: auto;
+}
+
+.web_stats{ 
+  width: 42%;
+  padding: 0;
+  margin: 0;
+  display: inline;
+  position: fixed;
+  text-align:center;
+}
+
+.product_stats{
+  width: 42%; 
+  display: inline;
+  float: left;
+  text-align:center;
+}
