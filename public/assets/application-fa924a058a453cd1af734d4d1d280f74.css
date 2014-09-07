@@ -1,0 +1,327 @@
+/* Styles for the cart in the main page */
+/* line 6, /home/action/depot/app/assets/stylesheets/carts.css.scss */
+#store .item_price, #store .total_line {
+  text-align: right;
+}
+
+/* line 9, /home/action/depot/app/assets/stylesheets/carts.css.scss */
+#store .total_line .total_cell {
+  font-weight: bold;
+}
+/* Styles for order form */
+/*forms*/
+/* line 10, /home/action/depot/app/assets/stylesheets/orders.css.scss */
+.depot_form fieldset {
+  background: #bdc3c7;
+}
+
+/* line 14, /home/action/depot/app/assets/stylesheets/orders.css.scss */
+.depot_form legend {
+  color: #dfd;
+  background: #2c3e50;
+  font-family: sans-serif;
+  padding: 0.2em 1em;
+}
+
+/* line 21, /home/action/depot/app/assets/stylesheets/orders.css.scss */
+.depot_form label {
+  width: 5em;
+  float: left;
+  text-align: right;
+  padding-top: 0.2em;
+  margin-right: 0.1em;
+  display: block;
+}
+
+/* line 30, /home/action/depot/app/assets/stylesheets/orders.css.scss */
+.depot_form select, .depot_form textarea, .depot_form input {
+  margin-left: 0.5em;
+}
+
+/* line 33, /home/action/depot/app/assets/stylesheets/orders.css.scss */
+.depot_form .submit {
+  margin-left: 4em;
+}
+/* line 5, /home/action/depot/app/assets/stylesheets/products.css.scss */
+.list_line_odd {
+  background-color: #bdc3c7;
+}
+/* line 1, /home/action/depot/app/assets/stylesheets/scaffolds.css.scss */
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 9, /home/action/depot/app/assets/stylesheets/scaffolds.css.scss */
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 15, /home/action/depot/app/assets/stylesheets/scaffolds.css.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 21, /home/action/depot/app/assets/stylesheets/scaffolds.css.scss */
+a {
+  color: #000;
+}
+/* line 23, /home/action/depot/app/assets/stylesheets/scaffolds.css.scss */
+a:visited {
+  color: #666;
+}
+/* line 26, /home/action/depot/app/assets/stylesheets/scaffolds.css.scss */
+a:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+/* line 33, /home/action/depot/app/assets/stylesheets/scaffolds.css.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 38, /home/action/depot/app/assets/stylesheets/scaffolds.css.scss */
+#notice {
+  color: green;
+}
+
+/* line 42, /home/action/depot/app/assets/stylesheets/scaffolds.css.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 48, /home/action/depot/app/assets/stylesheets/scaffolds.css.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 55, /home/action/depot/app/assets/stylesheets/scaffolds.css.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 65, /home/action/depot/app/assets/stylesheets/scaffolds.css.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+/*admin page statistics
+.stats{
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  overflow: auto;
+}
+
+.web_stats{ 
+  width: 40%;
+  padding: 0;
+  margin: 0;
+  display: inline;
+  position: fixed;
+  text-align:center;
+}
+
+.product_stats{
+  width: 40%; 
+  display: inline;
+  float: left;
+  text-align:center;
+}
+*/
+/* line 95, /home/action/depot/app/assets/stylesheets/scaffolds.css.scss */
+.table {
+  text-align: center;
+}
+/* line 5, /home/action/depot/app/assets/stylesheets/store.css.scss */
+#store .entry form, #store .entry form div {
+  display: inline;
+}
+
+/* Styles for the cart in the sidebar */
+/* line 10, /home/action/depot/app/assets/stylesheets/store.css.scss */
+#cart, #cart table {
+  font-size: smaller;
+  color: white;
+}
+
+/* line 14, /home/action/depot/app/assets/stylesheets/store.css.scss */
+#cart table {
+  margin-bottom: 10px;
+}
+
+/* line 18, /home/action/depot/app/assets/stylesheets/store.css.scss */
+.locale {
+  float: right;
+  padding-top: 0.2em;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
+/* Layout styles for main page */
+#banner {
+  background: #2c3e50;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid;
+  font: small-caps 40px/40px "Times New Roman", serif;
+  color: #ecf0f1;
+  text-align: center;
+  box-shadow: inset -2px -3px 3px 0px rgba(50, 50, 50, 0.75);
+}
+
+#banner img {
+  float: left;
+}
+#columns {
+  background: #bdc3c7;
+}
+#main {
+  margin-left: 18em;
+  padding-top: 4ex;
+  padding-left: 2em;
+  background: white;
+}
+#side {
+  float: left;
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-bottom: 1em;
+  width: 18em;
+  padding-right: 20px;
+  background: #bdc3c7;
+}
+#side a {
+  color: #2c3e50;
+  font-size: small;
+}
+
+.nav-stacked li{
+  border: 2px solid #ecf0f1;
+  font-weight:bold;
+  font-size: 15px;
+  text-align:center;
+  border-radius:15px;
+}
+
+/*catalog*/
+.panel-info{
+  background-color:#F0FFFF;
+  border-radius:15px;
+}
+.panel-info h3{
+  text-align: center; 
+  font-weight:bold;
+}
+
+.panel-info img{
+  float:left;
+  padding-left: 20px;
+  width: 100px;
+  height: 100px;
+}
+
+.panel-info p{
+  float:right;
+}
+
+.panel-info .btn{
+  float:left;
+  clear:both;
+}
+
+.soc {
+    overflow:hidden;
+    margin-left:10px; 
+    padding:0;
+    list-style:none;
+}
+
+.soc li {
+    display:inline-block;
+    *display:inline;
+    zoom:1;
+}
+
+
+.soc li a {
+    -o-transition:.1s;
+    -ms-transition:.1s;
+    -moz-transition:.1s;
+    -webkit-transition:.1s;
+    transition:.1s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+
+    
+    display:block;
+    position: relative;
+    z-index: 1;
+    width: 34px;
+    height: 38px;
+    line-height: 38px;
+    -webkit-border-radius: 17px;
+    -moz-border-radius: 17px;
+    border-radius: 17px;
+    margin-right: 10px;
+
+}
+
+.soc a:hover {
+    z-index: 2;
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+}
+
+.soc-icon-last{
+    margin:0 !important;
+}
+
+.pull-right{
+  margin-right:7%;
+}
+
+.depot_form{
+  margin-right:2%;
+}
+
+.depot_form div {
+  margin: 0.5em 0;
+  margin-right:3%;
+}
