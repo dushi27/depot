@@ -1,10 +1,15 @@
 <p id="notice"><%= notice %></p>
+  <strong>Items:</strong>
+
+  <%@order.line_items.each do |item|%>
+    <%=item.quantity%>
+  <%end%> 
+
 
 <p>
   <strong>Name:</strong>
   <%= @order.name %>
 </p>
-
 <p>
   <strong>Address:</strong>
   <%= @order.address %>
