@@ -1,26 +1,27 @@
 <div class="container">
 <table class="table">
   <tr>  
-   <th> <h1>Product Statistics</h1>
-     As of <%= Time.now%> We have <%= pluralize(@total_orders, "order" ) %>.
-     <script type="text/javascript" charset="utf-8">
-  $(function () {
-  new Highcharts.Chart({
-    chart: { renderTo: 'orders_chart' },
-    title: { text: 'Orders by Day' },
-    xAxis: { type: 'datetime' },
-    yAxis: {
-      title: { text: 'Number of Orders'}
-    },
-    series: [{
-      pointInterval: <%= 1.day * 1000 %>,
-      pointStart: <%= 3.weeks.ago.at_midnight.to_i * 1000 %>,      
-      data: <%=@data%>
-    }]
-  });
-});
-</script>
-     <div id="orders_chart" style="width: 400px; height: 300px;"></div>
+   <th> <h1>Order Statistics</h1>
+     As of <%= Time.now%> We have <%= pluralize(@total_orders, "order" ) %>.<br>
+      <script type="text/javascript" charset="utf-8">
+          $(function () {
+          new Highcharts.Chart({
+            chart: { renderTo: 'orders_chart' },
+            title: { text: 'Orders Per Day' },
+            xAxis: { type: 'datetime' },
+            yAxis: {
+              title: { text: 'Orders'}
+            },
+            series: [{
+              pointInterval: <%= 24 * 3600 * 1000 %>,
+              pointStart: <%= 3.weeks.ago.at_midnight.to_i * 1000 %>,  
+              name: "Number of orders per day",
+              data: <%=@data%>
+            }]
+          });
+        });
+      </script>
+     <div id="orders_chart"></div>
    </th>
 
   <!-- Step 1: Create the containing elements. -->
