@@ -14,7 +14,7 @@
             },
             series: [{
               pointInterval: <%= 24 * 3600 * 1000 %>,
-              pointStart: <%= 3.weeks.ago.at_midnight.to_i * 1000 %>,  
+              pointStart: <%=Time.parse(@startDate).utc.to_i*1000%>,  
               name: "Number of orders per day",
               data: <%=@data%>
             }]
@@ -28,6 +28,7 @@
 
   <th> 
     <h1>Web Statistics</h1>
+    <p>Please use bookzrails@gmail.com and bookzrails2014 to test Google Analytics features</p>
     <section id="auth-button"></section>
     <section id="view-selector"></section>
     <section id="timeline"></section>
