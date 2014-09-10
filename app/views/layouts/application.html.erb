@@ -44,7 +44,7 @@
           <li><%= link_to 'Orders',   orders_path%></li>
           <li><%= link_to 'Products', products_path %></li>
           <li><%= link_to 'Users',    users_path%></li> 
-          <li><%= link_to 'Products API', "http://bookz.herokuapp.com/api/v1/products.json" %></li>
+          <li><%= #link_to 'Products API', "http://bookz.herokuapp.com/api/v1/products.json" %></li>
           <br><%= button_to 'Logout', logout_path, method: :delete, class:"btn btn-warning"   %>
         <%else%>
           <br><%= button_to 'Admin Login', login_path, method: :get, class:"btn btn-success"%><br>    
@@ -59,14 +59,13 @@
       </div>
   </div><!--end of column id-->
   <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-46997714-2', 'auto');
-  ga('send', 'pageview');
-
-</script>
+    ga('create', 'UA-46997714-2', 'auto');
+    ga('send', 'pageview');
+  </script>
 </body>
 </html>
