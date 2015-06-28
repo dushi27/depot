@@ -3,6 +3,7 @@
   <tr>  
    <th> <h1>Order Statistics</h1>
      As of <%= Time.now%> We have <%= pluralize(@total_orders, "order" ) %>.<br>
+     <%if @ordersByDate%>
       <script type="text/javascript" charset="utf-8">
           $(function () {
           new Highcharts.Chart({
@@ -21,6 +22,7 @@
           });
         });
       </script>
+     <%end%>
      <div id="orders_chart" style="width: 400px; height: 300px;"></div>
    </th>
 
@@ -28,7 +30,7 @@
 
   <th> 
     <h1>Web Statistics</h1>
-    <p>Please use bookzrails@gmail.com and bookzrails2014 to test Google Analytics features</p>
+    <p>Use bookzrails@gmail.com and bookzrails2014 to test Google Analytics features</p>
     <section id="auth-button"></section>
     <section id="view-selector"></section>
     <section id="timeline"></section>

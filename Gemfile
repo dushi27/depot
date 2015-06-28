@@ -10,6 +10,13 @@ gem 'jquery-rails', '~>3.1.0'
 gem 'turbolinks', '~>2.2.2'
 gem 'jbuilder', '~> 2.0'
 
+# image upload
+gem 'carrierwave', '0.10.0'
+gem 'mini_magick', '3.8.0'
+
+# image display
+gem 'masonry-rails'
+
   group  :development do
     gem 'spring', '~>1.1.3'
   end

@@ -2,7 +2,7 @@
 <div id="product_list">
   <h1>Products Catalog</h1><br>
   
-  <table class='table'> 
+  <table class='table table-striped'> 
    <thead>
     <tr>
       <th>Catalog Image</th>
@@ -14,7 +14,7 @@
     <% @products.each do |product| %>
       <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
       <td>
-        <%= image_tag(product.image_url, height: '70', width: '70') %>
+        <%= image_tag(product.image, height: '70', width: '70') %>
       </td>
 
       <td class="list_description">

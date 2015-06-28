@@ -4,7 +4,7 @@ class UsersControllerTest < ActionController::TestCase
   setup do
     @input_attributes = {
        name: "sam",
-       password:"private",
+      password:"private"}
   end
 
   test "should get index" do

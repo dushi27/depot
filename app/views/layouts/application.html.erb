@@ -19,15 +19,6 @@
      <%end%>    
     <%= 'Book-Z Online Bookstore' || t('.title') %>
     
- <!-- Social Icons-->
-   <ul class="soc">
-    <li><a href="https://github.com/dushi27/depot" target="_blank"><img src="http://icons.iconarchive.com/icons/lunartemplates/modern-social-media-rounded/64/GitHub-icon.png"></a></li>
-    <li><a href="https://twitter.com/Dushyanthi1" target="_blank"><img src="http://bit.ly/1mUSG1s"/></a></li>
-    <li><a href="http://dushyanthipierismspc.blogspot.com" target="_blank"><img src="http://bit.ly/1BnDy6y"/></a></li>
-    <li><a href="https://www.linkedin.com/in/dushyanthipieris" target="_blank"><img src="http://bit.ly/1AmsPrE"/></a></li>
-  </ul>
-<!-- Socila Icons -->
-    
   </div>
   <div id="columns">
     <div id="side">
@@ -36,25 +27,15 @@
           <%= render @cart %>
         <% end %>
       <% end %><br>
-      <ul class="nav nav-pills nav-stacked">
-          <li><a href="/"><%= t('.home') %></a></li> 
-        <% if session[:user_id] %>
-          <br />
-          <li><%= link_to 'Admin Home',   admin_path%></li>
-          <li><%= link_to 'Orders',   orders_path%></li>
-          <li><%= link_to 'Products', products_path %></li>
-          <li><%= link_to 'Users',    users_path%></li>          
-          <br> <%= button_to 'Logout', logout_path, method: :delete, class:"btn btn-warning" %>
-        <%else%>
-          <br><%= button_to 'Admin Login', login_path, method: :get, class:"btn btn-success"%><br>    
-      <% end %>
-     </ul>
+      <%=render "layouts/nav"%>
 
     </div>
     <img src="">
     
-      <div id="main">     
+      <div id="main">  
+        <div class='col-md-12'>
         <%= yield %>
+        </div>
       </div>
   </div><!--end of column id-->
   <script>

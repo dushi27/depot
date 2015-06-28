@@ -35,12 +35,12 @@ class OrdersControllerTest < ActionController::TestCase
   end
 
   test "should get edit" do
-    get :edit, id: @order
+    get :edit, id: @order.id
     assert_response :success
   end
 
   test "should update order" do
-    patch :update, id: @order, order: { address: @order.address, email: @order.email, name: @order.name, pay_type: @order.pay_type }
+    patch :update, id: @order, order: { street_address: @order.street_address, city: @order.city, zip: @order.zip,email: @order.email, name: @order.name, pay_type: @order.pay_type }
     assert_redirected_to order_path(assigns(:order))
   end
   
@@ -52,7 +52,7 @@ class OrdersControllerTest < ActionController::TestCase
 
   test "should destroy order" do
     assert_difference('Order.count', -1) do
-      delete :destroy, id: @order
+      delete :destroy, id: @order.id
     end
     assert_redirected_to orders_path
   end

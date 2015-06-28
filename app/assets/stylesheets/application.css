@@ -12,6 +12,8 @@
  *
  *= require_tree .
  *= require_self
+ *= require 'masonry/basic'
+ *= require 'masonry/fluid'
  */
 
 /* Layout styles for main page */

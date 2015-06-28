@@ -2,12 +2,16 @@
 
 one:
   name: MyString
-  address: MyText
+  street_address: MyText
+  city: mystring
+  zip: 12345
   email: MyString@yahoo.com
   pay_type: Check
 
 two:
   name: MyString
-  address: MyText
+  street_address: MyText
+  city: mystring
+  zip: 12345
   email: MyString
   pay_type: MyString

@@ -1,17 +1,17 @@
 <% if notice %>
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
 <% end %>
 
-<div class="container">
+<div id="post" class="transitions-enabled">
   <% @products.each do |product| %>
-    <div class="panel panel-info">
-      <h3><%= product.title %></h3>
-      <%= image_tag(product.image_url)%>
-      <div class= "panel-body">
-        <%=raw product.description %>  
-        <span class="price">Price: <%= number_to_currency(product.price) %></span>
-        <%= button_to 'Add to Cart', line_items_path(product_id: product.id), class:"btn btn-primary" %>
-      </div>
+    <div class='box'>
+        <h3 style='text-align:center;'><%= product.title %></h3>
+        <%= image_tag(product.image_url)%>
+        <div class= "panel-body">
+          <%=raw product.description.truncate(100) %>  
+          <span class="price">Price: <%= number_to_currency(product.price) %></span>
+          <%= button_to 'Add to Cart', line_items_path(product_id: product.id), class:"btn btn-primary" %>
+        </div>
     </div>
   <% end %>   
 </div>
