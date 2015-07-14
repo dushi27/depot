@@ -2,8 +2,10 @@
     <tr id="current_item">
   <% else %>
     <tr>
-  <% end %>
-  <td><%= line_item.quantity %>&times;</td>
-  <td><%= line_item.product.title %></td>
-  <td class="item_price"><%= number_to_currency(line_item.total_price) %></td>
+<% end %>
+<%unless line_item.nil?%>
+  <td><%= line_item.quantity%>&times;</td>
+      <td><%= line_item.product.title if defined? line_item.title %></td>
+      <td class="item_price"><%= number_to_currency(line_item.total_price) unless line_item.nil?%></td>
+<%end%>
 </tr>

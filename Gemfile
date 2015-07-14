@@ -9,6 +9,9 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails', '~>3.1.0'
 gem 'turbolinks', '~>2.2.2'
 gem 'jbuilder', '~> 2.0'
+gem 'faker'
+gem 'unirest'
+gem 'bootstrap-sass', '~> 3.3.5'
 
 # image upload
 gem 'carrierwave', '0.10.0'

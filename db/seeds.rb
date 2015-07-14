@@ -1,10 +1,46 @@
+Product.delete_all
+authors = ['Isaac%20Asimov', 'tolkien', 'arthur%20conan%20doyle']
+authors.each do |author|
+  search = Unirest.get("https://openlibrary.org/search.json?q=#{author}&format=json")
+  search.body['docs'].each do |book|
+    begin
+      isbn =  book['isbn'].first
+      title = book['title']
+      image = "http://covers.openlibrary.org/b/isbn/#{isbn}-L.jpg"
+    rescue => e
+      puts e
+      next
+    end
+
+    product = Product.new(:title => title, :price => Faker::Commerce.price, :description => Faker::Lorem.words(4).join, :remote_image_url => image)
+    product.save
+    
+    if product.id and product.id % 3 == 0
+      cart = Cart.create  
+      line_item = LineItem.create(:product_id => product.id, :cart_id => cart.id, :quantity => 1)
+      order = Order.create(:name => Faker::Name.name, :street_address => Faker::Address.street_address, :city => Faker::Address.city,
+        :pay_type => "Check", :zip => Faker::Address.zip, :email => Faker::Internet.email)
+      line_item.order_id = order.id
+      line_item.save
+    end
+    sleep(1)
+  end
+end
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 
 User.create(name: 'bookzrails', password:'bookzrails2014', password_confirmation:'bookzrails2014')
 User.create(name: 'john', password:'john2014', password_confirmation:'john2014')
 
 
-Product.delete_all
+
+=begin
+1000.times do |n|
+  product = Product.new(:title => Faker::Lorem.words(2).join(" "), :price => Faker::Commerce.price, :description => Faker::Lorem.paragraphs(1).first, :remote_image_url => "http://robohash.org/sitsequiquia.png?size=300x300")
+  product.save
+=end
+
+
+=begin
 Product.create(title: 'Web Design for Developers',
   description:
     %{<p>
@@ -97,3 +133,4 @@ Product.create(title: 'Programming Perl',
     %{<p>Technically this is quite an advanced book. It is very much written for experienced developers. It is one of the few books that has a chapter on NDK programming. Because of rapid developments in the Android SDK and NDK a 3rd edition is (according to Amazon) due to be released in the near future. There is no obvious mention of the upcoming 3rd edition on the Manning web site. The section on network programming is very useful. Android internet applications are very much oriented towards the REST protocol, and the example in this book serves as a useful starting point to working with REST, and implementing Android based REST client applications. Till the third edition appears I would recommend purchasing this edition. Manning have an early access programming called MEAP (Manning Early Access Program) that is similar to the O'Reilly "Rough Cuts" program. The third edition is not in the MEAP program. However, another advanced Android programming book, Android In Practice, is. I especially liked the sections on multi-threading and HTTP networking and web services.</p>},
   price: 205.50)
 # . . .
+=end
