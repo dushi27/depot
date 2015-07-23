@@ -2,6 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.top-nav-btn li {
+  border-right: 4px solid white;
+  border-radius: 50px;
+  &:hover{
+   border-right: 7px solid white;
+  }
+}
+
 #store .entry form, #store .entry form div{
   display: inline;  
 }

@@ -1,4 +1,6 @@
 Depot::Application.routes.draw do
+  resources :search_suggestions
+
   namespace :api, defaults: {format: 'json'}  do
     namespace :v1 do
       resources :products
@@ -20,7 +22,8 @@ Depot::Application.routes.draw do
     resources :products do
     get :who_bought, on: :member
   end
-    
+  
+  get 'search' => 'store#search'
   root to: 'store#index' , as: 'store'
   end
 end

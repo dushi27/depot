@@ -1,5 +1,5 @@
 class CartsController < ApplicationController                 
-  skip_before_filter :authorize, only: [:create, :update, :destroy]
+  skip_before_filter :authorize, only: [:create, :update, :destroy, :show]
 
   def index
     @carts = Cart.all
@@ -11,8 +11,8 @@ class CartsController < ApplicationController
   end
 
   def show
-    begin
-      @cart = Cart.find(params[:cart_id])
+    @cart = Cart.find(params[:id])
+=begin
     rescue ActiveRecord::RecordNotFound
       logger.error "Attempt to access an invalid cart #{params[:id]}"
       redirect_to store_url, notice: 'Invalid cart'
@@ -21,7 +21,7 @@ class CartsController < ApplicationController
         format.html 
         format.xml  { render xml: @cart }
       end
-    end
+=end
   end
 
   def new

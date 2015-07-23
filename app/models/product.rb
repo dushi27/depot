@@ -18,6 +18,10 @@ class Product < ActiveRecord::Base
     end
   end
   
+  def self.search(query)
+    result = Product.where("title like ?", "#{query}_%")
+  end
+  
   validates :title, :description, :image_url, presence: true  
   validates :price, numericality: {greater_than_or_equal_to: 0.01}  
   validates :title, uniqueness: true  

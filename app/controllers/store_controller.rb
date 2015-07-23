@@ -9,4 +9,9 @@ class StoreController < ApplicationController
       @cart = current_cart
     end
   end
+  
+  def search
+    @products = Product.search(params[:query])
+    render 'index'
+  end
 end
