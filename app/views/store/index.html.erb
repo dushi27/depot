@@ -13,7 +13,7 @@
   <% @products.each do |product| %>
     <div class='box'>
         <h3 style='text-align:center;'><%= product.title %></h3>
-        <%= image_tag(product.image_url)%>
+       <%=image_tag(product.image_url, :class => "bookImage")%>
         <div class= "panel-body">
           <%=raw product.description.truncate(100) %>  
           <span class="price">Price: <%= number_to_currency(product.price) %></span>
