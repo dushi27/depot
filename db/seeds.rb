@@ -1,6 +1,9 @@
 require 'unirest'
+
 Product.delete_all
-authors = ['Isaac%20Asimov', 'tolkien', 'arthur%20conan%20doyle','Andrew%20Murray', 'shakespeare', 'j%20k%20rowling', 'charles%20dickens', 'leo%20tolstoy']
+authors = 
+['Isaac%20Asimov','tolkien','arthur%20conan%20doyle','Andrew%20Murray','shakespeare','j%20k%20rowling','charles%20dickens', 'leo%20tolstoy']
+
 authors.each do |author|
   search = Unirest.get("https://openlibrary.org/search.json?q=#{author}&format=json")
   search.body['docs'].each do |book|
@@ -13,7 +16,7 @@ authors.each do |author|
       next
     end
      
-    product = Product.new(:title => title, :price => Faker::Commerce.price, :description => Faker::Lorem.words(4).join, :image => image)
+    product = Product.new(:title => title, :price => Faker::Commerce.price, :description => Faker::Lorem.words(4).join, :remote_image_url => image)
     product.save
     
     if product.id and product.id % 3 == 0
