@@ -12,14 +12,7 @@ authors.each do |author|
       puts e
       next
     end
-    
-    # Test whether the image exsist
-    image_page = Unirest.get(image)
-    if image_page.document.getElementsByTagName('img')[0].naturalWidth == 1
-      image = 'https://placeholdit.imgix.net/~text?txtsize=13&bg=#ffffff&txtclr=ffffff%26text%3Dlimewall%252520rocks%21&txt=BOOKZ&w=300&h=300' 
-    end
-      
-
+     
     product = Product.new(:title => title, :price => Faker::Commerce.price, :description => Faker::Lorem.words(4).join, :remote_image_url => image)
     product.save
     
