@@ -1,6 +1,6 @@
 require 'unirest'
 Product.delete_all
-authors = ['Isaac%20Asimov', 'tolkien', 'arthur%20conan%20doyle', 'Corín%20Tellado', 'Andrew%20Murray']
+authors = ['Isaac%20Asimov', 'tolkien', 'arthur%20conan%20doyle','Andrew%20Murray', 'shakespeare', 'j%20k%20rowling', 'charles%20dickens', 'leo%20tolstoy']
 authors.each do |author|
   search = Unirest.get("https://openlibrary.org/search.json?q=#{author}&format=json")
   search.body['docs'].each do |book|
