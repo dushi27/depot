@@ -91,3 +91,5 @@ Rails.application.configure do
     domain:'bookz.herokuapp.com' # your domain to identify your server when connecting
     }
 end
+
+
