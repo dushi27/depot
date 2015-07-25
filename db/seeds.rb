@@ -13,7 +13,7 @@ authors.each do |author|
       next
     end
      
-    product = Product.new(:title => title, :price => Faker::Commerce.price, :description => Faker::Lorem.words(4).join, :remote_image_url => image)
+    product = Product.new(:title => title, :price => Faker::Commerce.price, :description => Faker::Lorem.words(4).join, :image => image)
     product.save
     
     if product.id and product.id % 3 == 0
