@@ -1,7 +1,6 @@
 if Rails.env.production?
   puts "start running Carrier wave init............................................................"
-  CarrierWave.configure do |config|
-    config.fog_provider = 'fog/aws'                     
+  CarrierWave.configure do |config|                  
     config.fog_credentials = {
       provider:              'AWS',                       
       aws_access_key_id:     ENV['S3_KEY'],                      
