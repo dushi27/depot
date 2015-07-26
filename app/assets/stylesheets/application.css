@@ -16,7 +16,12 @@
  *= require 'masonry/fluid'
  */
 
+
 /* Layout styles for main page */
+.logo-image {
+  height:70px;
+}
+
 #banner {
   background: #2c3e50;
   padding-top: 10px;

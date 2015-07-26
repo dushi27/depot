@@ -4,20 +4,20 @@
 
 <%=form_tag 'search', method: :get do%>
   <div class='row'>
-    <div class='col-md-10'><%=text_field_tag :query,nil, :class=> 'form-control', :placeholder => 'Search by title', :id => 'search'%></div>
-    <div class='col-md-2'><%=submit_tag :submit, :class => 'btn btn-success'%></div>
+    <div class='col-md-offset-1 col-md-9'><%=text_field_tag :query,nil, :class=> 'form-control', :placeholder => 'Search by title', :id => 'search'%></div>
+    <div class='col-md-2'><%=button_tag "", :class => 'btn btn-primary glyphicon glyphicon-search'%></div>
   </div>
 <%end%><br>
 
 <div id="post" class="transitions-enabled">
   <% @products.each do |product| %>
-    <div class='box'>
-        <h3 style='text-align:center;'><%= product.title %></h3>
+    <div class='box' style='background:white;'>
+        <h3 style='text-align:center; margin-top:0;'><%= product.title %></h3>
        <%=image_tag(product.image_url)%>
         <div class= "panel-body">
-          <%=raw product.description.truncate(100) %>  
-          <span class="price">Price: <%= number_to_currency(product.price) %></span>
-          <br><%= link_to '', line_items_path(product_id: product.id), class:"btn btn-success glyphicon glyphicon-shopping-cart pull-right" %>
+          <div class='row'>
+            <%= link_to "  #{number_to_currency(product.price)}", line_items_path(product_id: product.id), class:"btn btn-success glyphicon glyphicon-shopping-cart pull-right" %>
+          </div>
         </div>
     </div>
   <% end %>   
