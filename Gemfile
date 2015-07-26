@@ -16,7 +16,7 @@ gem 'bootstrap-sass', '3.2.0.0'
 # image upload
 gem 'carrierwave', '0.10.0'
 gem 'mini_magick', '3.8.0'
-gem "fog-aws"
+gem "fog", "~> 1.27", require: "fog/rackspace/storage"
 
 # image display
 gem 'masonry-rails'
