@@ -5,10 +5,11 @@ if Rails.env.production?
         # Configuration for Amazon S3
         #user name: railsbaseimagehandler
           :provider              => 'AWS',
-          :aws_access_key_id     => 'AKIAIFGNK4GWMQBYVZUA',
-          :aws_secret_access_key => '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'
+          :aws_access_key_id     => ENV['S3_KEY'],
+          :aws_secret_access_key => ENV['S3_SECRET'],
+          :region                => ENV['REGION']                
         }
-        config.fog_directory     =  "railsbaseimagesdev"
+        config.fog_directory     =  ENV['S3_BUCKET']
     end
   puts "END running Carrier wave init............................................................"
 end
