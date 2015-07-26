@@ -1,4 +1,3 @@
-<%= link_to 'New Order', new_order_path , class:'btn btn-lg btn-info pull-right'%>
 <div id="product_list">
   <h1>Current Orders</h1><br>
 
@@ -29,10 +28,12 @@
         
       </tr>
     <% end %>    
+    <%= link_to '', new_order_path , class:'btn btn-floating glyphicon glyphicon-plus'%>
   </tbody>
 </table>
 </div>
 <br>
-<%= will_paginate @orders %><br>
+
+<%= will_paginate @orders, :class => 'pagination' %><br>
 
 

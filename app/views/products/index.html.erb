@@ -1,4 +1,3 @@
-<%= link_to 'New product', new_product_path, class:'btn btn-lg btn-info pull-right' %>
 <div id="product_list">
   <h1>Products Catalog</h1><br>
   
@@ -29,6 +28,9 @@
         </td>
       </tr>
     <% end %>
+    <%= link_to '', new_product_path , class:'btn btn-floating glyphicon glyphicon-plus'%>
   </table>
 </div>
 <br />
+
+<%= will_paginate @products, :class => 'pagination' %><br>
