@@ -1,5 +1,7 @@
 Depot::Application.routes.draw do
   resources :search_suggestions
+  
+  post 'cart_it' => 'line_items#create'
 
   namespace :api, defaults: {format: 'json'}  do
     namespace :v1 do

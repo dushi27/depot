@@ -16,7 +16,7 @@
        <%=image_tag(product.image_url)%>
         <div class= "panel-body">
           <div class='row'>
-            <%= link_to "  #{number_to_currency(product.price)}", line_items_path(product_id: product.id), class:"btn btn-success glyphicon glyphicon-shopping-cart pull-right" %>
+            <%= link_to "  #{number_to_currency(product.price)}", cart_it_path(product_id: product.id), :method => :post, class:"btn btn-success glyphicon glyphicon-shopping-cart pull-right" %>
           </div>
         </div>
     </div>

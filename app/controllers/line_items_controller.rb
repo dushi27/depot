@@ -27,7 +27,7 @@ class LineItemsController < ApplicationController
          format.html { redirect_to(store_url)  }
          format.js   { @current_item = @line_item }        
        else
-         format.html { render action: "new" }         
+         redirect_to store_url, notice: 'An error occured'       
        end
      end
  end

@@ -19,7 +19,7 @@ class Product < ActiveRecord::Base
   end
   
   def self.search(query)
-    result = Product.where("title like ?", "#{query}_%")
+    result = Product.where("title like ?", "%#{query}%")
   end
   
   validates :title, :description, :image_url, presence: true  
