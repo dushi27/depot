@@ -5,12 +5,8 @@
 <% end %>
       <ul class="list-group">
 <%unless line_item.nil?%>
-   
   <li class="list-group-item" style='color:black;'><%=line_item.quantity %>x <%= number_to_currency(line_item.total_price) unless line_item.nil?%></li>
 </ul>   
-      
-  <td><%= line_item.quantity%>&times;</td>
-      <td><%= line_item.product.title if defined? line_item.title %></td>
-      <td class="item_price"><%= number_to_currency(line_item.total_price) unless line_item.nil?%></td>
-<%end%>
+<%end%>      
+
 </tr>

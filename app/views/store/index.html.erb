@@ -1,7 +1,3 @@
-<% if notice %>
-  <p id="notice"><%= notice %></p>
-<% end %>
-
 <%=form_tag 'search', method: :get do%>
   <div class='row'>
     <div class='col-md-offset-1 col-md-9'><%=text_field_tag :query,nil, :class=> 'form-control', :placeholder => 'Search by title', :id => 'search'%></div>
