@@ -30,7 +30,7 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
    
-      if @product.update_attributes(params[:product])
+      if @product.update_attributes(product_params)
         redirect_to(@product, :notice => 'Product was successfully updated.')
        # format.xml  { head :ok }
       else
