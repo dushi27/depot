@@ -34,7 +34,7 @@
         <%else%>
          <li><%=link_to 'Log In', login_path %></li>
         <%end%>
-        <% if @cart %>
+        <% if @cart and @cart.total_items > 0 %>
             <li><%= link_to "Cart (#{pluralize(@cart.total_items, 'item')})" , cart_path(@cart)%></li>
         <%end%>
       </ul>     
@@ -42,6 +42,10 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+  
+ <% flash.each do |key, value| %>
+  <%= content_tag :div, value, class: "alert-box #{key}" %>
+<% end %>
   
  
   <div class='container'>
