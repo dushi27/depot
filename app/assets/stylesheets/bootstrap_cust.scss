@@ -2,16 +2,17 @@ $navbar-inverse-link-color: #ecf0f1;
 $navbar-inverse-bg: #2c3e50;
 $navbar-inverse-link-active-color:#FFFACD;
 $navbar-height:75px;
+$pagination-hover-color: darkblue;
+$pagination-bg:  #ecf0f1;
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
 
 .navbar-brand {
   font-family: 'Damion', cursive;
-  font-size:300%; 
-  
+  font-size:300%;   
 }
-
 
 .btn-floating { 
   position:fixed;
