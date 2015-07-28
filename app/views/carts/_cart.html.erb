@@ -1,5 +1,16 @@
 <h1>Your Shopping Cart</h1>
-<%= render cart.line_items %>
+<table class='table table-striped'>
+ <tbody>
+  <%@cart_items.each do |i|%>
+    <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+      <td><%=i.product.title%></td>
+      <td><%=i.quantity%></td>
+      <td><%=number_to_currency(i.product.price * i.quantity)%></td>
+      <td><%= link_to 'Destroy', line_item_path(:id => i.id, :cart_id =>  @cart.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+   <%end%>
+ </tbody>
+</table>
 <h3> Total: <%= number_to_currency cart.total_price if cart.total_price %><h3>
 
   <div class="btn-group" role="group">

@@ -1,6 +1,10 @@
 class Cart < ActiveRecord::Base
   has_many :line_items,  dependent: :destroy
   
+  def list_products
+    @list = self.line_items.eager_load(:product).select("products.title , line_items.quantity, products.price, line_items.id")
+  end
+  
   def add_product(product_id)
     current_item = line_items.where(:product_id => product_id).first
     if current_item

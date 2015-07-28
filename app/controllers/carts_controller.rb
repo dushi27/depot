@@ -12,6 +12,7 @@ class CartsController < ApplicationController
 
   def show
     @cart = Cart.find(params[:id])
+    @cart_items = @cart.list_products
 =begin
     rescue ActiveRecord::RecordNotFound
       logger.error "Attempt to access an invalid cart #{params[:id]}"

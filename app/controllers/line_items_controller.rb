@@ -22,32 +22,39 @@ class LineItemsController < ApplicationController
     product = Product.find(params[:product_id])
     @line_item = @cart.add_product(product.id) #adds  products with the same product_id and display as a total
 
-     respond_to do |format|
-       if @line_item.save
-         format.html { redirect_to(store_url)  }
-         format.js   { @current_item = @line_item }        
-       else
-         redirect_to store_url, notice: 'An error occured'       
-       end
+   respond_to do |format|
+     if @line_item.save
+       format.html { redirect_to(store_url)  }
+       format.js   { @current_item = @line_item }        
+     else
+       redirect_to store_url, notice: 'An error occured'       
      end
+   end
  end
 
   def update
     @cart = current_cart
-    #@line_item = LineItem.find(params[:id])
     @line_items = @cart.line_items
     
-      if @line_item.update_attributes(params[:line_item])
-        redirect_to(@line_item, notice: 'Line item was successfully updated.')        
-      else
-        render action: "edit"        
-      end 
+    if @line_item.update_attributes(params[:line_item])
+      redirect_to(@line_item, notice: 'Line item was successfully updated.')        
+    else
+      render action: "edit"        
+    end 
   end
 
   def destroy
     @line_item = LineItem.find(params[:id])
     @line_item.destroy
-    redirect_to(line_items_url)
+    
+    flash[:success] =  'Item was removed from the cart'
+    @cart = Cart.find(params[:cart_id])   
+    
+    if @cart.line_items.empty?
+      redirect_to store_url
+    else
+      redirect_to cart_path((params[:cart_id]))
+    end
   end
 
   
