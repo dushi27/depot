@@ -1,10 +1,8 @@
 Rails.application.configure do
-  return unless Rails.env.production? 
+  break unless Rails.env.production? 
   
-  # Strip all comments from JavaScript files, even copyright notices.
-  # By doing so, you are legally required to acknowledge
-  # the use of the software somewhere in your Web site or app:
-  uglifier = Uglifier.new output: { comments: :none }
+  # Strip all comments from JavaScript files, except copyright notices.
+  uglifier = Uglifier.new output: { comments: :copyright }
 
   config.assets.compile = true
   config.assets.debug = false
