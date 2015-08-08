@@ -2,7 +2,7 @@ Rails.application.configure do
   break unless Rails.env.production? 
   
   # Strip all comments from JavaScript files, except copyright notices.
-  uglifier = Uglifier.new output: { comments: :copyright }
+  uglifier = Uglifier.new output: { comments: :none }
 
   config.assets.compile = true
   config.assets.debug = false
