@@ -22,5 +22,6 @@ module Depot
     
     #Skip the local validation because not important AT THE MOMENT
     I18n.enforce_available_locales = false
+    config.assets.css_compressor = :sass
   end
 end
