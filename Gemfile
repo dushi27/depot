@@ -13,7 +13,10 @@ gem 'faker'
 gem 'unirest'
 gem 'bootstrap-sass', '3.2.0.0'
 gem 'bootstrap-will_paginate', '0.0.10'
+
+# For compression
 gem 'dalli'
+gem 'htmlcompressor', '~> 0.2.0'
 
 # image upload
 gem 'carrierwave', '0.10.0'
