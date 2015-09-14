@@ -32,7 +32,11 @@ class OrdersController < ApplicationController
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
         redirect_to store_url, notice: 'Thank you for your order. Please check your email for order confirmation'
-        Notifier.order_received(@order).deliver
+        begin
+          Notifier.order_received(@order).deliver
+        rescue => error
+          puts "#{error}"
+        end
       else
         render action: "new"
       end
